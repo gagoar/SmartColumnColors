@@ -18,8 +18,23 @@ Options
 -
 
 Custom column number? (on your .vimrc/.vimrc.after)
+
 ``` vim
-  g:max_column = NN
+  let g:smart_display_opts = { 'column' : NN }
+```
+where NN it's the column number that you want highlighted
+
+Custom Highlighted colors? (on your .vimrc/.vimrc.after)
+
+``` vim
+  let g:smart_display_opts = {'guifg': 'White', 'guibg': 'Red' }
+```
+
+`note` you could use all the properties mentioned erlier in the same
+declaration:
+
+``` vim
+  let g:smart_display_opts = {'guifg': 'White', 'guibg': 'Red', 'column' : 82 }
 ```
 
 Disabling
