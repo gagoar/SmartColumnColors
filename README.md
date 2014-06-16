@@ -3,6 +3,13 @@ Smart Column Colors
 
 This plugin alert us when we reach a defined amount of characters per line.
 
+Instead of showing a line over all the content, showing the limit,
+SmartColumnColors displays a bg/fg distinctive for that character in particular.
+
+How it looks? (red character)
+-
+![ScreenShot](https://raw.githubusercontent.com/gagoar/SmartColumnColors/master/screenshot.png)
+
 Install
 -
 
@@ -14,7 +21,7 @@ if you are using [janus](https://github.com/carlhuda/janus), put it under ~/.jan
 
 then all you need to do is restart your vim/mvim
 
-Options
+Options (colors, column limit)
 -
 
 Custom column number? (on your .vimrc/.vimrc.after)
