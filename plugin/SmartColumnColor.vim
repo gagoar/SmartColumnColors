@@ -9,8 +9,8 @@ function! s:SmartColumnColor()
   endif
 
   let opts = {'guifg': 'White', 'guibg': 'Red' , 'column': 80}
-  let before  = '\%'
-  let after   = 'v.'
+  let before = '\%'
+  let after = 'v.'
 
   if exists('g:smart_display_opts')
     if has_key(g:smart_display_opts, 'column')
@@ -28,7 +28,7 @@ function! s:SmartColumnColor()
 
   let pattern = before . opts.column . after
 
-  exe 'highlight smart_column guifg = '. opts.guifg . ' guibg= ' . opts.guibg
+  exe 'highlight smart_column guifg='. opts.guifg .' guibg='. opts.guibg .' ctermfg='. opts.guifg .' ctermbg='. opts.guibg
 
   let w:m1 = matchadd('smart_column', pattern, -1)
 
