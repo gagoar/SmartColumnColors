@@ -12,16 +12,18 @@ function! s:SmartColumnColor()
   let before  = '\%'
   let after   = 'v.'
 
-  if has_key(g:smart_display_opts, 'column')
-    let opts.column = g:smart_display_opts.column
-  endif
+  if exists('g:smart_display_opts')
+    if has_key(g:smart_display_opts, 'column')
+      let opts.column = g:smart_display_opts.column
+    endif
 
-  if has_key(g:smart_display_opts, 'guifg')
-    let opts.guifg = g:smart_display_opts.guifg
-  endif
+    if has_key(g:smart_display_opts, 'guifg')
+      let opts.guifg = g:smart_display_opts.guifg
+    endif
 
-  if has_key(g:smart_display_opts, 'guibg')
-    let opts.guibg = g:smart_display_opts.guibg
+    if has_key(g:smart_display_opts, 'guibg')
+      let opts.guibg = g:smart_display_opts.guibg
+    endif
   endif
 
   let pattern = before . opts.column . after
