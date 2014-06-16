@@ -8,17 +8,28 @@ function! s:SmartColumnColor()
     return
   endif
 
-  hi ColorColumn guibg=#2d2d2d ctermbg=246
+  let opts = {'guifg': 'White', 'guibg': 'Red' , 'column': 80}
   let before  = '\%'
-  let after   = 'v'
-  let default_max_columns = 81
+  let after   = 'v.'
 
-  if exists('g:max_column')
-    let default_max_columns = g:max_column
+  if has_key(g:smart_display_opts, 'column')
+    let opts.column = g:smart_display_opts.column
   endif
 
-  let pattern = before . default_max_columns . after
-  let w:m1 = matchadd('Search', pattern, -1)
+  if has_key(g:smart_display_opts, 'guifg')
+    let opts.guifg = g:smart_display_opts.guifg
+  endif
+
+  if has_key(g:smart_display_opts, 'guibg')
+    let opts.guibg = g:smart_display_opts.guibg
+  endif
+
+  let pattern = before . opts.column . after
+
+  exe 'highlight smart_column guifg = '. opts.guifg . ' guibg= ' . opts.guibg
+
+  let w:m1 = matchadd('smart_column', pattern, -1)
+
 endfunction
 
 autocmd BufWinEnter * SmartColumnColor
