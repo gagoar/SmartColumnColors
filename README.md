@@ -46,16 +46,13 @@ declaration:
 
 Alternative Column
 -
-To enable a secondary column line just declare
+To enable a secondary column line declare
 ```vim
   let b:enable_alternative_smart_column = 1
 ```
-
-To customize the second column line use the options [guifg/guibg/column]
-
-The default alternative configuration:
+or customize it with the same [options](#options-colors-column-limit)
 ```vim
-  let g:smart_display_alternative_opts = {'guifg': 'White', 'guibg': 'Red' , 'column': 120}
+  let g:smart_display_alternative_opts = {'guifg': 'White', 'guibg': 'Red' , 'column': 120} " defaults
 ```
 
 Disabling
